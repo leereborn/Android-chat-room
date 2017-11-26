@@ -1,3 +1,24 @@
 <resources>
-    <string name="app_name">ChatTime</string>
+    <string name="app_name">Chatime</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="send_button_label">Send</string>
+    <string name="title_activity_home">home</string>
+
+    //home activity
+    <string name="button_create_room">Create a chat room</string>
+    <string name="button_view_room_list">View existing rooms</string>
+    <string name="title_activity_room_creation">Create Room</string>
+
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password (optional)</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
 </resources>
