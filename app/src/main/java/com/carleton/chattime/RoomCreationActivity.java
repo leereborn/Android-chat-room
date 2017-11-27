@@ -38,7 +38,7 @@ public class RoomCreationActivity extends AppCompatActivity {
                 String descript = description.getText().toString();//TODO
                 //create new child
                 mDatabaseReference.child(name);
-                Intent intent = new Intent(v.getContext(), MainActivity.class);
+                Intent intent = new Intent(v.getContext(), chatRoomActivity.class);
                 intent.putExtra("roomID", name);
                 startActivity(intent);
             }

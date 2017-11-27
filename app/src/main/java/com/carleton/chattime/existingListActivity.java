@@ -53,7 +53,7 @@ public class existingListActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String text = listview.getItemAtPosition(position).toString();
-                Intent intent = new Intent(view.getContext(), MainActivity.class);
+                Intent intent = new Intent(view.getContext(), chatRoomActivity.class);
                 System.out.println("text: "+text);
                 intent.putExtra("roomID",text);
                 startActivity(intent);

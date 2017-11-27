@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".existingListActivity" />
         <activity android:name=".firebaseBaseActivity" />
-        <activity android:name=".RoomCreationActivity"></activity>
+        <activity android:name=".RoomCreationActivity" />
+        <activity android:name=".chatRoomActivity"></activity>
     </application>
 
 </manifest>
