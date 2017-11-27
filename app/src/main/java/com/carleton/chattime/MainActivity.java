@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         //firebase Auth
         mFirebaseAuth = FirebaseAuth.getInstance();
+
         mAuthStateListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
@@ -56,8 +57,8 @@ public class MainActivity extends AppCompatActivity {
         viewButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(v.getContext(), existingListActivity.class);
-                //startActivity(intent);
+                Intent intent = new Intent(v.getContext(), existingListActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -81,4 +82,5 @@ public class MainActivity extends AppCompatActivity {
             mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
         }
     }
+
 }
