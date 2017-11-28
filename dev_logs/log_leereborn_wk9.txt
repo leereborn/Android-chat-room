@@ -1,2 +1,4 @@
+Time spent: 6 hrs.
+Duties:
 Designed user login UI
 Implemented user login functionality which allow user to login 

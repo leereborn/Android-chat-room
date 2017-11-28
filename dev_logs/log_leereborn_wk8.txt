@@ -1,1 +1,2 @@
-Implemented send and recieve text message functionality.
+Time spent: 5 hrs.
+Duties:Implemented send and recieve text message functionality.

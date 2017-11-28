@@ -1,1 +1,2 @@
-Implemented firebase database listeners in the activityies which need to comunicate with firebase
+Time spent: 6 hrs.
+Duties:Implemented firebase database listeners in the activityies which need to comunicate with firebase

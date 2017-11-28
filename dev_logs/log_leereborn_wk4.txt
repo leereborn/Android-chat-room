@@ -1,2 +1,4 @@
+Time spent: 5 hrs
+Duties:
 setup firebase server
 learning firebase apis

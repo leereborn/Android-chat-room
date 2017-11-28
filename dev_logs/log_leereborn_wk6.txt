@@ -1,2 +1,4 @@
+Time spent: 5hrs
+Duties:
 Designed chat room creation UI
 Implemented room creation functionality

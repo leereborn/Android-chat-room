@@ -1,2 +1,4 @@
+Time spent: 12 hrs
+Duties:
 Designed chat room UI
 Implemented main chat room activity.

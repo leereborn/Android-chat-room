@@ -1,2 +1,4 @@
+Time spent: 20 hrs.
+Duties:
 Implementing send image functionality
 Writing design pattern document
