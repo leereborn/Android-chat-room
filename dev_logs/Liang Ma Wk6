@@ -1,0 +1,6 @@
+This week I do:
+  Think about the data structure of the database as we need to add the user list in the our app
+  Develop the user list activity of our app
+  Design the UI of user list activity
+Challenge:
+  Add button to each item in the list( Solved by creating another layout only have one textview and one button and create a new adaptor)
