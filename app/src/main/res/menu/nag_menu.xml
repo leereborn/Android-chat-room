@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/nag_users"
+    android:icon="@mipmap/users"
+    android:title="Users">
+
+</item>
+    <item android:id="@+id/nag_create"
+        android:icon="@mipmap/create"
+        android:title="Create Your Onw Chat Room">
+
+    </item>
+    <item android:id="@+id/nag_list"
+        android:icon="@mipmap/list"
+        android:title="View ChatroomList">
+
+    </item>
+    <item android:id="@+id/nag_logout"
+        android:icon="@mipmap/logout"
+        android:title="Log out">
+
+    </item>
+</menu>

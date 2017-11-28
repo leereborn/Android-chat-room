@@ -3,7 +3,8 @@
     <string name="sign_out">Sign Out</string>
     <string name="send_button_label">Send</string>
     <string name="title_activity_home">home</string>
-
+    <string name="open">Open</string>
+    <string name="close">Close</string>
     //home activity
     <string name="button_create_room">Create a chat room</string>
     <string name="button_view_room_list">View existing rooms</string>

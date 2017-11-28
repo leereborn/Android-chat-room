@@ -3,6 +3,9 @@ package com.carleton.chattime;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -29,13 +32,14 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.ArrayList;
 import java.util.List;
 
-public class chatRoomActivity extends AppCompatActivity {
+public class chatRoomActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     private static final String TAG = "MainActivity";
 
     public static final String ANONYMOUS = "anonymous";
     public static final int DEFAULT_MSG_LENGTH_LIMIT = 1000;
-
+    private DrawerLayout mDrawerLayout;
+    private ActionBarDrawerToggle mToggle;
     private ListView mMessageListView;
     private MessageAdapter mMessageAdapter;
     private ProgressBar mProgressBar;
@@ -58,7 +62,12 @@ public class chatRoomActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat_room);
-
+        setNavigationViewListner();
+        mDrawerLayout =(DrawerLayout)findViewById(R.id.drawerLayout);
+        mToggle = new ActionBarDrawerToggle(this,mDrawerLayout,R.string.open,R.string.close);
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
         String roomID = intent.getStringExtra("roomID");
 
@@ -167,6 +176,37 @@ public class chatRoomActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        if(mToggle.onOptionsItemSelected(item)){
+            return true;
+        }
         return super.onOptionsItemSelected(item);
+    }
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
+
+        if (id == R.id.nag_list) {
+            //Intent intent = new Intent(this,UsersActivity.class);
+            //startActivity(intent);//DO your stuff }
+
+        }
+        if (id == R.id.nag_create) {
+            Intent intent = new Intent(this,RoomCreationActivity.class);
+            startActivity(intent);//DO your stuff }
+
+        }
+        if (id == R.id.nag_users) {
+            //Intent intent = new Intent(this,UsersActivity.class);
+            //startActivity(intent);//DO your stuff }
+
+        }
+        if (id == R.id.nag_logout) {
+            finishAffinity();//DO your stuff }
+
+        }
+    return false;}
+    private void setNavigationViewListner() {
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navview);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 }
