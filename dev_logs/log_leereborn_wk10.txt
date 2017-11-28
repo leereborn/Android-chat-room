@@ -1,0 +1,2 @@
+Implementing send image functionality
+Writing design pattern document

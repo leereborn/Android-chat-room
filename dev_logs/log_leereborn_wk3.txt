@@ -1,0 +1,3 @@
+Doing research on server side implementation
+Compare the pros and cons between using firebase and implementing server ourself
+Learning firebase 

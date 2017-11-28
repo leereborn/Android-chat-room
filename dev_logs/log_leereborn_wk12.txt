@@ -1,0 +1,1 @@
+Refactoring code to use adaptor design pattern to dispaly messages recieving from server

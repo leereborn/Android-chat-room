@@ -1,0 +1,2 @@
+Designed chat room UI
+Implemented main chat room activity.

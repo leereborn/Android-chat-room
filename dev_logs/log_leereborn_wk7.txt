@@ -1,0 +1,1 @@
+Implemented firebase database listeners in the activityies which need to comunicate with firebase

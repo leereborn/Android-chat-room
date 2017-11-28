@@ -1,0 +1,2 @@
+Designed chat room creation UI
+Implemented room creation functionality
