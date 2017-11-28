@@ -1,0 +1,7 @@
+This week I do:
+  Think about how to create the navigator bar for our app
+  do research about the navigatior bar
+  design the items which are needed in navigator bar
+Challenges:
+  Because our activities are developed already, we don't want to create a new navigator bar activity to replace all the work we already done.
+  So I try to find out the way to add the navigator bar to the activity
