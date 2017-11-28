@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     private Button viewButton;
     private Button createButton;
-    //firebase
+
+    //firebase auth
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
 

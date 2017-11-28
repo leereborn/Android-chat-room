@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".welcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,7 +19,8 @@
         <activity android:name=".existingListActivity" />
         <activity android:name=".firebaseBaseActivity" />
         <activity android:name=".RoomCreationActivity" />
-        <activity android:name=".chatRoomActivity"></activity>
+        <activity android:name=".chatRoomActivity" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
