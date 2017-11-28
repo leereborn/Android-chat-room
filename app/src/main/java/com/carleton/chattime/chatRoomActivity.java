@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
@@ -70,14 +71,17 @@ public class chatRoomActivity extends AppCompatActivity implements NavigationVie
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         Intent intent = getIntent();
         String roomID = intent.getStringExtra("roomID");
-
         //mUsername = Build.MODEL;
         System.out.println("mUsername:"+mUsername);
+        NavigationView navview = (NavigationView) findViewById(R.id.navview);
+        View hview= navview.getHeaderView(0);
+        TextView username=(TextView) hview.findViewById(R.id.editText);
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child(roomID);
         fUser = FirebaseAuth.getInstance().getCurrentUser();
         mUsername = fUser.getDisplayName();
+        username.setText(mUsername);
         // Initialize references to views
         mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
         mMessageListView = (ListView) findViewById(R.id.messageListView);
@@ -186,8 +190,8 @@ public class chatRoomActivity extends AppCompatActivity implements NavigationVie
         int id = item.getItemId();
 
         if (id == R.id.nag_list) {
-            //Intent intent = new Intent(this,UsersActivity.class);
-            //startActivity(intent);//DO your stuff }
+            Intent intent = new Intent(this,existingListActivity.class);
+            startActivity(intent);//DO your stuff }
 
         }
         if (id == R.id.nag_create) {
@@ -196,8 +200,8 @@ public class chatRoomActivity extends AppCompatActivity implements NavigationVie
 
         }
         if (id == R.id.nag_users) {
-            //Intent intent = new Intent(this,UsersActivity.class);
-            //startActivity(intent);//DO your stuff }
+            Intent intent = new Intent(this,UsersActivity.class);
+            startActivity(intent);//DO your stuff }
 
         }
         if (id == R.id.nag_logout) {

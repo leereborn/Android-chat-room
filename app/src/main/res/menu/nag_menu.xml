@@ -7,7 +7,7 @@
 </item>
     <item android:id="@+id/nag_create"
         android:icon="@mipmap/create"
-        android:title="Create Your Onw Chat Room">
+        android:title="Create Your Own Chat Room">
 
     </item>
     <item android:id="@+id/nag_list"

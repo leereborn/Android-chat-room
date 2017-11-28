@@ -21,6 +21,7 @@
         <activity android:name=".RoomCreationActivity" />
         <activity android:name=".chatRoomActivity" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".UsersActivity" />
     </application>
 
 </manifest>
