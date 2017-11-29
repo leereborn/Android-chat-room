@@ -1,6 +1,7 @@
 package com.carleton.chattime;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -21,6 +22,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -29,6 +31,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +65,9 @@ public class chatRoomActivity extends AppCompatActivity implements NavigationVie
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private FirebaseUser fUser;
 
+    private FirebaseStorage mFirebaseStorage;
+    private StorageReference mStorageReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +88,8 @@ public class chatRoomActivity extends AppCompatActivity implements NavigationVie
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child(roomID);
+        mFirebaseStorage = FirebaseStorage.getInstance();
+        mStorageReference = mFirebaseStorage.getReference().child("chat_photo");
         fUser = FirebaseAuth.getInstance().getCurrentUser();
         mUsername = fUser.getDisplayName();
         username.setText(mUsername);
@@ -189,6 +199,7 @@ public class chatRoomActivity extends AppCompatActivity implements NavigationVie
         }
         return super.onOptionsItemSelected(item);
     }
+
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
@@ -213,8 +224,31 @@ public class chatRoomActivity extends AppCompatActivity implements NavigationVie
 
         }
     return false;}
+
     private void setNavigationViewListner() {
         NavigationView navigationView = (NavigationView) findViewById(R.id.navview);
         navigationView.setNavigationItemSelectedListener(this);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        if (requestCode == RC_PHOTO_PICKER && resultCode == RESULT_OK){
+            Uri selectedImageUri = data.getData();
+            // Get a reference to store file at chat_photos/<FILENAME>
+            StorageReference photoRef = mStorageReference.child(selectedImageUri.getLastPathSegment());
+
+            // Upload file to Firebase Storage
+            photoRef.putFile(selectedImageUri)
+                    .addOnSuccessListener(this, new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            // When the image has successfully uploaded, we get its download URL
+                            Uri downloadUrl = taskSnapshot.getDownloadUrl();
+
+                            // Set the download URL to the message box, so that the user can send it to the database
+                            ChatMessage friendlyMessage = new ChatMessage(null, mUsername, downloadUrl.toString());
+                            mMessagesDatabaseReference.push().setValue(friendlyMessage);
+                        }
+                    });
+        }
     }
 }
