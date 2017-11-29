@@ -56,6 +56,7 @@ public class existingListActivity extends AppCompatActivity {
                 Intent intent = new Intent(view.getContext(), chatRoomActivity.class);
                 System.out.println("text: "+text);
                 intent.putExtra("roomID",text);
+                User.addUserToDatabase(text);
                 startActivity(intent);
             }
         });

@@ -1,6 +1,7 @@
 package com.carleton.chattime;
 
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -9,7 +10,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UsersActivity extends firebaseBaseActivity {
+public class UsersActivity extends AppCompatActivity {
     private ListView listview;
     private List<String> list = new ArrayList<String>();
     private ArrayAdapter adapter;
