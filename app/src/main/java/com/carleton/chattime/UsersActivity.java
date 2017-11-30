@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -15,11 +17,17 @@ public class UsersActivity extends AppCompatActivity {
     private List<String> list = new ArrayList<String>();
     private ArrayAdapter adapter;
     private ValueEventListener mValueEventListener;
+
+    private FirebaseDatabase mFirebaseDatabase;
+    private DatabaseReference roomDatabaseReference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userlist);
         ArrayList<String> list = new ArrayList<String>();
+
+
         list.add("Leereborn");
         list.add("Felix");
 

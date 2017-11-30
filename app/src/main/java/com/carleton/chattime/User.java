@@ -10,11 +10,12 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 
 public class User {
+
     public static void addUserToDatabase(String roomName){
         DatabaseReference roomDatabaseReference = FirebaseDatabase.getInstance().getReference().child(roomName);
         DatabaseReference userListDatabaseReference=roomDatabaseReference.child("user_list");
         FirebaseUser mFirebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         String dispalyName = mFirebaseUser.getDisplayName();
-        userListDatabaseReference.child("name").setValue(dispalyName);
+        userListDatabaseReference.push().setValue(dispalyName);
     }
 }

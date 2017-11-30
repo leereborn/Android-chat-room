@@ -39,9 +39,9 @@ public class RoomCreationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String name = roomName.getText().toString();
                 String descript = description.getText().toString();//TODO
-                User.addUserToDatabase(name);
                 Intent intent = new Intent(v.getContext(), chatRoomActivity.class);
                 intent.putExtra("roomID", name);
+                User.addUserToDatabase(name);
                 startActivity(intent);
             }
         });

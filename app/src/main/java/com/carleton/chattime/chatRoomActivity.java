@@ -88,6 +88,10 @@ public class chatRoomActivity extends AppCompatActivity implements NavigationVie
 
         mFirebaseDatabase = FirebaseDatabase.getInstance();
         mMessagesDatabaseReference = mFirebaseDatabase.getReference().child(roomID);
+        //mMessagesDatabaseReference.child("user_list");
+        //userListref.push().
+        //User.addUserToDatabase(roomID);//
+
         mFirebaseStorage = FirebaseStorage.getInstance();
         mStorageReference = mFirebaseStorage.getReference().child("chat_photo");
         fUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -216,6 +220,7 @@ public class chatRoomActivity extends AppCompatActivity implements NavigationVie
         }
         if (id == R.id.nag_users) {
             Intent intent = new Intent(this,UsersActivity.class);
+//            intent.putExtra("roomRef",);
             startActivity(intent);//DO your stuff }
 
         }
@@ -229,7 +234,6 @@ public class chatRoomActivity extends AppCompatActivity implements NavigationVie
         NavigationView navigationView = (NavigationView) findViewById(R.id.navview);
         navigationView.setNavigationItemSelectedListener(this);
     }
-
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         if (requestCode == RC_PHOTO_PICKER && resultCode == RESULT_OK){
