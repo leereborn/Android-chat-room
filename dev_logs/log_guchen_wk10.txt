@@ -1,0 +1,3 @@
+Time spent: 5hrs
+Duty: Make the introduction video
+      Test and debug the app

@@ -1,0 +1,3 @@
+Time spent: 5hrs
+Duty: Doing research on firebase and design the activities
+      Help testing and debugging current UI

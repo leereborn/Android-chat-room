@@ -1,0 +1,4 @@
+Time spent: 6hrs
+Duty: Working on which architecture and design partten we can use
+      learning about object-oriented programming and adapter design pattern
+      Working on D3

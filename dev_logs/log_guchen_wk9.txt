@@ -1,0 +1,3 @@
+Time spent: 5hrs
+Duty: Refactoring the app using adapter pattern
+      Modifying the UML diagram adding the design patterns into it

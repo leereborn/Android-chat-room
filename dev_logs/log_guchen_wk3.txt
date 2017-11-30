@@ -1,0 +1,3 @@
+Time spent: 5hrs
+Duty: design the connection between app and Firebase
+      test and debug current code

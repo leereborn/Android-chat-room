@@ -1,0 +1,3 @@
+Time spent: 9hrs
+Duty: Design the project using adapter pattern
+      Draw the UML diagram of the project
